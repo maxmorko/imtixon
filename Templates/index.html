@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="slider_bg"><!-- start slider -->
+<div class="container">
+		<div class="row slider">
+		<div class="wmuSlider example1"><!-- start wmuSlider example1 -->
+			   <div class="wmuSliderWrapper">
+				   <article style="position: absolute; width: 100%; opacity: 0;"> 
+				  	 	<div class="slider_img text-center">
+				   			<ul class="list-unstyled list_imgs">
+				   				<li><img src="{{ banner.img.url }}"/></li>
+				   			</ul>
+			           	</div>
+				   </article>
+				 </div>
+                <ul class="wmuSliderPagination">
+                	<li><a href="{% url 'index_url' %}" class="">1</a></li>
+                </ul>
+			<script src="web/js/jquery.wmuSlider.js"></script> 
+		     <script>
+				 $('.example1').wmuSlider();         
+			</script>
+        </div><!-- end wmuSlider example1 -->
+        <div class="clearfix"></div>
+      </div>
+</div>
+</div>
+<div class="main_bg"  id="about"><!-- start about us -->
+<div class="container">
+	<div class="row about">
+		<div class="col-md-3 about_img">
+			<img src="{{ info.img.url }}" alt="" class="responsive"/>
+		</div>
+		<div class="col-md-9 about_text">
+			<h3>{{ info.title }}</h3>
+			<p>{{ info.text }}</p>
+			<div class="soc_icons navbar-right">
+				<ul class="list-unstyled text-center">
+					<li><a href="{{ info.facebook }}"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="{{ info.twitter }}"><i class="fa fa-twitter"></i></a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}
